@@ -1,0 +1,47 @@
+==========================================
+Projet de Programmation Systeme 
+  by FAN YiZhe (#21502157)
+  && HSIEH YungKun (#21505130)
+==========================================
+1. To build the code, type the following command:
+
+	make
+	
+   It shall compile the codes and generate the following executable files:
+   
+	- main.exe
+	- main_syc.exe
+	- main_tube.exe
+	- example.exe
+	- channel_global_fork_test.exe
+	- benchmark.exe
+
+2. The generated executables corresponding the items in projet's spec (under /doc/projet.pdf)
+
+   	- main.exe (parameters -n & -s allowed)
+   	  For 3. Sujet minimal + 4.1 Comparaison avec les tubes + 4.3 Canaux globaux + 4.4 Canaux synchrones
+   	  
+	- main_syc.exe (parameters -n & -s allowed)
+	  Experimental version for 4.4 Canaux synchrones
+
+	- main_tube.exe (parameters -n allowed)
+	  Experimental version for 4.1 Comparaison avec les tubes
+
+	- example.exe (with no parameter)
+	  For 4.2 Exemples d’utilisation
+
+	- channel_global_fork_test.exe (with no parameter)
+	  Example for 4.3 Canaux globaux
+	  
+3. To execute the benchmark in batch:
+
+	- Ensure that the benchmark.exe has been generated
+	- Execute the shell script ./benchmark.sh
+	- Usage of benchmark.exe : ./benchmark.exe [-n num of max threads] [-m num of max data slots] [-t implementation type (0~3)] 
+		------------------------------------
+		Implementation type
+		0 -> Channel basic (buffered with queue) implementation
+		1 -> Channel shared/global implementation
+		2 -> Channel synchronized implementation
+		3 -> Channel pipe implementation
+		------------------------------------
